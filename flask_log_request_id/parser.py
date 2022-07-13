@@ -57,7 +57,7 @@ def x_flipt_request_id():
     return generic_http_header_parser_for('X-FLIPT-REQUEST-ID')()
 
 
-def auto_parser(parsers=(x_request_id, x_correlation_id, amazon_elb_trace_id)):
+def auto_parser(parsers=(x_flipt_request_id, x_request_id, x_correlation_id, amazon_elb_trace_id)):
     """
     Meta parser that will try all known parser and it will bring the first found id
     :param list[Callable] parsers: A list of callable parsers to try to extract request_id
